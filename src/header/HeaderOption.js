@@ -10,7 +10,7 @@ function HeaderOption() {
                 </li>
 
                 <li className="net m-3">
-                    My Network
+                    Network
                 </li>
 
                 <li className="m-3">

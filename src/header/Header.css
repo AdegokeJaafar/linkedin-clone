@@ -7,7 +7,6 @@
 
 .header-left
   > img {
-  object-fit: contain;
   height: 40px;
   margin-right: 10px;
 }
