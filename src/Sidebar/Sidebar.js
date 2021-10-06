@@ -26,16 +26,18 @@ function Sidebar() {
                 </div>
             </div>
             <div className="sidebar-bottom">
-                    <p>Recent</p>
-                    <div className="recentItem">
+                <p>Recent</p>
+                <div className="recentItem">
                     <p>#javascript</p>
                     <p>#reactjs</p>
                     <p>#nodejs</p>
                     <p>#vuejs</p>
                     <p>#developer</p>
-                    </div>
+                </div>
             </div>
+            
         </div>
+
     )
 }
 

@@ -3,7 +3,7 @@ import './HeaderOption.css'
 
 function HeaderOption() {
     return (
-        <div className="headerOptions">
+        <div className="headerOptions mx-5">
             <ul className="headerOption">
                 <li className=" m-3">
                     Home

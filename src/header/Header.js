@@ -11,7 +11,7 @@ function Header () {
 
             <div className="header-search mt-3">
                 
-                <input type="text"/>
+                <input type="text" className="rounded"/>
             </div>
 
             <div className="header-right">

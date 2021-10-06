@@ -1,0 +1,8 @@
+.app {
+  background-color: #f3f2ef;
+  align-items: center;
+}
+
+.app-body {
+  display: flex;
+}
