@@ -17,7 +17,7 @@
   border: 1px
     solid
     lightgray;
-  border-radius: 100px;
+  border-radius: 30px;
   display: flex;
   padding: 10px;
   color: gray;
@@ -37,7 +37,16 @@
   outline-width: 0;
   font-weight: 600;
 }
+.feed-inputOptions {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 .createIcon {
+  width: 25px;
+  height: 25px;
+}
+.photo {
   width: 25px;
   height: 25px;
 }
