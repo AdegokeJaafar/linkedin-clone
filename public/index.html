@@ -41,5 +41,34 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js";
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-auth.js";
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore.js";
+       // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyA5O7Ag--fPCL4QJ2_4OLjr5F7cXcOBtTo",
+        authDomain: "linkedin-clone-d9769.firebaseapp.com",
+        projectId: "linkedin-clone-d9769",
+        storageBucket: "linkedin-clone-d9769.appspot.com",
+        messagingSenderId: "768670842989",
+        appId: "1:768670842989:web:36e89fbd2d03a9a75b3f64",
+        measurementId: "G-NMGSF85XZM"
+      };
+    
+      // Initialize Firebase
+      firebase.initializeApp(config);
+      
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+
+      db.settings ({ timestampsInSnapahots: true})
+    </script>
   </body>
 </html>

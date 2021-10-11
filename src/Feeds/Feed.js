@@ -1,15 +1,42 @@
-import React, {useState} from 'react'
-import './Feed.css';
-import InputOption from './InputOption';
-import Post from './Post'
+import React, {useState, useEffect} from "react"
+import "./Feed.css";
+import InputOption from "./InputOption";
+import Post from "./Post"
+import firebase from "../firebase"
+import { db } from "../firebase"
+
 
 function Feed() {
+    const [input, setInput] = useState('');
     const [posts, setPosts] = useState([]);
     
+
+    
+    useEffect(() => {
+       db.collection("posts").onSnapshot((snapshot) => 
+            setPosts(
+                snapshot.docs.map((doc) => ({
+                    id: doc.id,
+                    data: doc.data()
+                }))
+            )
+            );
+
+    }, []);
+
     const sendPost = (e) => {
         e.preventDefault();
+
+        db.collection("posts").add({
+            name: "Jaafar Adegoke",
+            description: "this is a test",
+            message: input,
+            photoUrl: "",
+            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        });
+
+        setInput("");
     };
-    
     return (
         <div className="feed">
             <div className="feed-inputContainer">
@@ -17,7 +44,7 @@ function Feed() {
                     <img className="createIcon" src="https://cdn-icons-png.flaticon.com/512/1250/1250925.png" alt="" />
                     <form>
                     <input type="text"/>
-                    <button onClick="sendPost" type="submit">Send</button>
+                    <button onClick={sendPost} type="submit">Send</button>
                     </form>
                 </div>
                 <div className="feed-inputOptions">
@@ -37,17 +64,20 @@ function Feed() {
                     <InputOption title="Write article" />
                 </div>
             </div>
+            
+            
             {/* Posts */}
-             {posts.map((post) =>(
-                 <Post />
+             {posts.map(({ id, data: { name, description, message, photoUrl }}) =>(
+                 <Post 
+                 key={id}
+                 name={name}
+                 description={description}
+                 message={message}
+                 photoUrl={photoUrl}
+                 />
              )
              
              )}
-             <Post
-             name="Jaafar Adegoke"
-             description="Detail-oriented Developer"
-             message="I'm happy this is working"
-             />
         </div>
     )
 }

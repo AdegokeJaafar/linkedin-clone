@@ -15,11 +15,22 @@ function Post({name, description, message, photoUrl }) {
                 <p>{message}</p>
             </div>
             <div className="post-buttons ">
+                <div>
                 <img className="photo" title="Like" color="gray" src="https://cdn-icons-png.flaticon.com/512/889/889221.png" alt=""/>
-                <img className="photo" title="Like" color="gray" src="https://cdn-icons-png.flaticon.com/512/1380/1380338.png" alt=""/>
+                <p>Like</p>
+                </div>
+                <div>
+                <img className="photo"  color="gray" src="https://cdn-icons-png.flaticon.com/512/1380/1380338.png" alt=""/>
+                <p>Comment</p>
+                </div>
+                <div>
                 <img className="photo" title="Like" color="gray" src="https://cdn-icons-png.flaticon.com/512/929/929610.png" alt=""/>
+                <p>Share</p>
+                </div>
+                <div>
                 <img className="photo" title="Like" color="gray" src="https://cdn-icons-png.flaticon.com/512/736/736161.png" alt=""/>
-            
+                <p>Send</p>
+                </div>
             </div>
         </div>
     )
