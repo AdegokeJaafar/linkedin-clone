@@ -1,7 +1,7 @@
 import React from 'react'
 import './HeaderOption.css'
 
-function HeaderOption() {
+function HeaderOption({onClick}) {
     return (
         <div className="headerOptions mx-5">
             <ul className="headerOption">
