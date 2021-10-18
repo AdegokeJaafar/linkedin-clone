@@ -1,14 +1,14 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import './Post.css'
 
-function Post({name, description, message, photoUrl }) {
+const Post = forwardRef(({name, description, message, photoUrl }, ref) =>{
     return (
-        <div className="post">
+        <div ref={ref} className="post">
             <div className="post-header">
                 <img className="photo" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="" />
                 <div className="post-info">
-                    <h2>Jaafar Adegoke</h2>
-                    <p>Description</p>
+                    <h2>{ name }</h2>
+                    <p>{ description }</p>
                 </div>
             </div>
             <div className="post-body">
@@ -34,6 +34,6 @@ function Post({name, description, message, photoUrl }) {
             </div>
         </div>
     )
-}
+})
 
 export default Post

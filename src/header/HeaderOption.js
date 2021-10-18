@@ -2,8 +2,9 @@ import React from 'react'
 import './HeaderOption.css'
 
 function HeaderOption({onClick}) {
+    
     return (
-        <div className="headerOptions mx-5">
+        <div onClick={onClick} className="headerOptions mx-5">
             <ul className="headerOption">
                 <li className=" m-3">
                     Home

@@ -7,6 +7,7 @@ import Header from "./header/Header";
 import Sidebar from "./Sidebar/Sidebar";
 import Feed from "./Feeds/Feed";
 import Login from "./Login/Login";
+import Widgets from "./Widgets/Widgets"
 
 
 function App() {
@@ -31,20 +32,20 @@ useEffect(() => {
           dispatch(logout());
       }
     });
-  }, [ ]);
+  }, );
   return (
    
     <div className="app">
       <Header />      
-      {!user ? (
+      {/* {!user ? (
         <Login /> 
-      ) : ( 
+      ) : (  */}
     <div className="app-body">
       <Sidebar />
       <Feed />
-      {/* <Widgets /> */}
+       <Widgets /> 
       </div>
-      )}
+      {/* )}  */}
     </div>
     
   );

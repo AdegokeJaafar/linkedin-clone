@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from "react-redux";
 import { auth } from "../firebase"
+import { login } from "../features/userSlice";
 import './Login.css'
 
 function Login() {
@@ -9,12 +10,23 @@ function Login() {
     const [name, setName] = useState("");
     const [profilePic, setProfilePic] = useState("");
     const dispatch = useDispatch();
+    
 
    const loginToApp = (e) => {
        e.preventDefault();
 
        auth?.signInWithEmailAndPassword(email, password)
-       
+       .then((userAuth) => {
+            dispatch(
+                login({
+                    email: userAuth.user.email,
+                    uid: userAuth.user.uid,
+                    displayName: userAuth.user.displayName,
+                    profilrPic: userAuth.user.photoURL,
+                })
+            );
+       })
+
    }
    
     const register = () => {
